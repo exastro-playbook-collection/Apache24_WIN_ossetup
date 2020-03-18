@@ -1,0 +1,15 @@
+###  vars file for ansible-apache
+
+# apache windows service name
+VAR_Apache24_WIN_ServiceName: 'Apache2.4'
+
+# apache windows service setting
+VAR_Apache24_WIN_Enable: off
+
+# apache restart setting
+VAR_Apache24_WIN_Start: off
+
+## local vars
+
+## OS and version
+apache24_WIN_OS_Version: 'Microsoft Windows Server 2016'

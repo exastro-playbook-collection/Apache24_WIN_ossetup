@@ -1,0 +1,28 @@
+---
+
+## Apacheサービス自動起動設定
+  - name: apache service auto start setting
+    win_service:
+      name: "{{ VAR_Apache24_WIN_ServiceName }}"
+      start_mode: auto
+    when:
+      - VAR_Apache24_WIN_Enable in [True,False]
+      - VAR_Apache24_WIN_Enable == True
+
+## Apacheサービス手動起動設定
+  - name: apache service manual start setting
+    win_service:
+      name: "{{ VAR_Apache24_WIN_ServiceName }}"
+      start_mode: manual
+    when:
+      - VAR_Apache24_WIN_Enable in [True,False]
+      - VAR_Apache24_WIN_Enable == False
+
+## Apacheサービスの再起動
+  - name: apache service start
+    win_service:
+      name: "{{ VAR_Apache24_WIN_ServiceName }}"
+      state: restarted
+    when:
+      - VAR_Apache24_WIN_Start in [True,False]
+      - VAR_Apache24_WIN_Start == True
